@@ -21,10 +21,10 @@ function get_client_ip() {
 
 function Connect()
 {
- $dbhost = "fdb6.biz.nf";
- $dbuser = "2540105_responses";
- $dbpass = "xdf35hy@";
- $dbname = "2540105_responses";
+ $dbhost = "%YOUR HOST%";
+ $dbuser = "%YOUR USER%";
+ $dbpass = "%YOUR PASSWORD%";
+ $dbname = "%YOUR NAME%";
 
  // Create connection
  $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname) or die($conn->connect_error);
@@ -87,8 +87,8 @@ $conn->close();
 //      </div>
 
 //    </div>';
-//$headers = 'From: contato.tesseracts@gmail.com' . "\r\n" .
- //   'Reply-To: contato.tesseracts@gmail.com' . "\r\n" .
+//$headers = 'From: %YOUR MAIL%' . "\r\n" .
+ //   'Reply-To: %YOUR MAIL%' . "\r\n" .
  //   'X-Mailer: PHP/' . phpversion();
 
 //mail($to, $subject, $message, $headers);
