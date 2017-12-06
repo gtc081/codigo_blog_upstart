@@ -32,6 +32,11 @@ function Connect()
  return $conn;
 }
 
+if(empty($_POST['email']) || empty($_POST['nome']) || strpos($_POST['email'], '@') == false) { //checa se nome e email estão em formato correto
+	echo "Email ou Nome inválidos :(";
+	exit();
+}
+
 date_default_timezone_set("America/Sao_Paulo");
 
 $conn    = Connect();
@@ -40,11 +45,6 @@ $email   = $conn->real_escape_string($_POST['email']);
 $ip      = get_client_ip();
 $message = $conn->real_escape_string($_POST['msg']);
 $date    = date("Y-m-d H:i:s");
-
-if($email <= "   " or $name <= "   ") {
-	echo "Email ou Nome inválidos :(";
-	goto end;
-}
 
 $query = ("SELECT ID FROM tb_cform WHERE u_email = '$email'");
 $success = $conn->query($query);
